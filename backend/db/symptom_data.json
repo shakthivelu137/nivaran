@@ -1,0 +1,295 @@
+{
+  "symptoms": {
+    "fever": {
+      "conditions": [
+        {
+          "name": "Common Cold",
+          "severity": "low",
+          "description": "A viral infection of the upper respiratory tract causing mild fever, runny nose, and sore throat.",
+          "remedies": ["Rest well", "Drink warm fluids (tea, soups)", "Steam inhalation", "Honey and ginger tea"],
+          "medicines": ["Paracetamol (500mg)", "Cetirizine for runny nose", "Vitamin C supplements"],
+          "see_doctor": false
+        },
+        {
+          "name": "Influenza (Flu)",
+          "severity": "medium",
+          "description": "A contagious respiratory illness caused by influenza viruses with high fever and body aches.",
+          "remedies": ["Bed rest", "Stay hydrated", "Warm compress on forehead", "Gargle with salt water"],
+          "medicines": ["Paracetamol or Ibuprofen", "Oseltamivir (Tamiflu) - prescription", "Antihistamines"],
+          "see_doctor": true
+        },
+        {
+          "name": "Malaria",
+          "severity": "high",
+          "description": "A mosquito-borne disease causing cyclical high fever, chills, and sweating.",
+          "remedies": ["Rest", "Drink plenty of fluids", "Cool compress"],
+          "medicines": ["Consult doctor immediately for antimalarial drugs"],
+          "see_doctor": true
+        },
+        {
+          "name": "Typhoid",
+          "severity": "high",
+          "description": "A bacterial infection causing sustained high fever, abdominal pain, and weakness.",
+          "remedies": ["Bed rest", "Soft bland diet (khichdi, rice)", "Stay hydrated"],
+          "medicines": ["See a doctor for antibiotics (Ciprofloxacin, Azithromycin)"],
+          "see_doctor": true
+        }
+      ]
+    },
+    "headache": {
+      "conditions": [
+        {
+          "name": "Tension Headache",
+          "severity": "low",
+          "description": "Most common type of headache caused by stress, fatigue, or poor posture.",
+          "remedies": ["Rest in a quiet dark room", "Cold or warm compress", "Gentle neck massage", "Deep breathing"],
+          "medicines": ["Paracetamol (500mg)", "Ibuprofen (400mg)", "Aspirin"],
+          "see_doctor": false
+        },
+        {
+          "name": "Migraine",
+          "severity": "medium",
+          "description": "Intense throbbing headache often with nausea, vomiting, and sensitivity to light.",
+          "remedies": ["Rest in dark quiet room", "Cold compress on forehead", "Stay hydrated", "Avoid triggers (caffeine, bright lights)"],
+          "medicines": ["Sumatriptan (prescription)", "Ibuprofen", "Paracetamol"],
+          "see_doctor": true
+        },
+        {
+          "name": "Sinusitis",
+          "severity": "medium",
+          "description": "Inflammation of the sinuses causing pressure headache, nasal congestion, and facial pain.",
+          "remedies": ["Steam inhalation", "Saline nasal rinse", "Warm compress on face", "Stay hydrated"],
+          "medicines": ["Decongestants (Pseudoephedrine)", "Nasal steroids (prescription)", "Paracetamol for pain"],
+          "see_doctor": false
+        }
+      ]
+    },
+    "cough": {
+      "conditions": [
+        {
+          "name": "Common Cold",
+          "severity": "low",
+          "description": "Viral upper respiratory infection causing dry or wet cough with nasal congestion.",
+          "remedies": ["Honey in warm water", "Steam inhalation", "Ginger tea", "Rest"],
+          "medicines": ["Dextromethorphan (cough suppressant)", "Guaifenesin (expectorant)", "Cetirizine"],
+          "see_doctor": false
+        },
+        {
+          "name": "Bronchitis",
+          "severity": "medium",
+          "description": "Inflammation of bronchial tubes causing persistent cough with mucus.",
+          "remedies": ["Rest", "Humidifier use", "Warm fluids", "Avoid smoking"],
+          "medicines": ["Bronchodilators (if prescribed)", "Expectorants", "Paracetamol for fever"],
+          "see_doctor": true
+        },
+        {
+          "name": "Asthma",
+          "severity": "high",
+          "description": "Chronic airway inflammation causing wheezing, shortness of breath, and coughing.",
+          "remedies": ["Avoid triggers", "Stay calm", "Controlled breathing"],
+          "medicines": ["Salbutamol inhaler (rescue)", "Consult doctor for long-term management"],
+          "see_doctor": true
+        },
+        {
+          "name": "COVID-19",
+          "severity": "high",
+          "description": "Viral infection causing dry cough, fever, fatigue, and loss of smell/taste.",
+          "remedies": ["Isolate at home", "Rest", "Stay hydrated", "Monitor oxygen levels"],
+          "medicines": ["Paracetamol", "Vitamin C & D", "Zinc supplements", "Consult doctor if oxygen drops"],
+          "see_doctor": true
+        }
+      ]
+    },
+    "stomach pain": {
+      "conditions": [
+        {
+          "name": "Gastritis",
+          "severity": "low",
+          "description": "Inflammation of the stomach lining causing burning pain, nausea, and bloating.",
+          "remedies": ["Eat small meals", "Avoid spicy/oily food", "Drink cold milk", "Avoid lying down after eating"],
+          "medicines": ["Antacids (Omeprazole, Pantoprazole)", "Ranitidine", "ORS if dehydrated"],
+          "see_doctor": false
+        },
+        {
+          "name": "Food Poisoning",
+          "severity": "medium",
+          "description": "Caused by contaminated food/water leading to stomach cramps, vomiting, and diarrhea.",
+          "remedies": ["Rest", "ORS (oral rehydration solution)", "BRAT diet (banana, rice, apple, toast)", "Avoid dairy"],
+          "medicines": ["ORS sachets", "Ondansetron (anti-nausea)", "See doctor if persistent"],
+          "see_doctor": false
+        },
+        {
+          "name": "Appendicitis",
+          "severity": "high",
+          "description": "Inflammation of the appendix causing sharp pain in lower right abdomen — EMERGENCY.",
+          "remedies": ["Do NOT take painkillers — go to hospital immediately"],
+          "medicines": ["Requires immediate surgery — do NOT delay"],
+          "see_doctor": true
+        }
+      ]
+    },
+    "sore throat": {
+      "conditions": [
+        {
+          "name": "Pharyngitis",
+          "severity": "low",
+          "description": "Inflammation of the pharynx causing sore, scratchy throat.",
+          "remedies": ["Gargle warm salt water", "Honey and lemon tea", "Rest voice", "Warm soups"],
+          "medicines": ["Throat lozenges", "Paracetamol", "Ibuprofen"],
+          "see_doctor": false
+        },
+        {
+          "name": "Strep Throat",
+          "severity": "medium",
+          "description": "Bacterial infection causing severe sore throat with white patches and fever.",
+          "remedies": ["Rest", "Warm fluids", "Salt water gargle"],
+          "medicines": ["Amoxicillin (prescription)", "Paracetamol for fever"],
+          "see_doctor": true
+        },
+        {
+          "name": "Tonsillitis",
+          "severity": "medium",
+          "description": "Inflammation of tonsils causing throat pain, swallowing difficulty, and fever.",
+          "remedies": ["Rest", "Cold/warm drinks", "Soft foods", "Salt water gargle"],
+          "medicines": ["Antibiotics if bacterial (prescription)", "Paracetamol", "Throat sprays"],
+          "see_doctor": true
+        }
+      ]
+    },
+    "dizziness": {
+      "conditions": [
+        {
+          "name": "Dehydration",
+          "severity": "low",
+          "description": "Lack of adequate fluids causing lightheadedness and dizziness.",
+          "remedies": ["Drink water/ORS immediately", "Sit or lie down", "Avoid sudden standing"],
+          "medicines": ["ORS sachets", "Electrolyte drinks"],
+          "see_doctor": false
+        },
+        {
+          "name": "Vertigo (BPPV)",
+          "severity": "medium",
+          "description": "Sensation of spinning caused by inner ear problems.",
+          "remedies": ["Epley maneuver (doctor-guided)", "Sit or lie still", "Avoid sudden head movements"],
+          "medicines": ["Betahistine", "Meclizine (anti-vertigo)", "Consult ENT doctor"],
+          "see_doctor": true
+        },
+        {
+          "name": "Low Blood Pressure",
+          "severity": "medium",
+          "description": "Blood pressure drops causing dizziness, fainting, and nausea.",
+          "remedies": ["Lie down with legs elevated", "Drink water", "Eat small salty snack", "Avoid hot environments"],
+          "medicines": ["ORS", "Consult doctor if recurring"],
+          "see_doctor": false
+        }
+      ]
+    },
+    "chest pain": {
+      "conditions": [
+        {
+          "name": "Heartburn (GERD)",
+          "severity": "low",
+          "description": "Acid reflux causing burning sensation in the chest.",
+          "remedies": ["Avoid spicy/fatty food", "Don't lie down after eating", "Elevate head while sleeping"],
+          "medicines": ["Antacids", "Omeprazole", "Pantoprazole"],
+          "see_doctor": false
+        },
+        {
+          "name": "Heart Attack",
+          "severity": "high",
+          "description": "EMERGENCY — Blocked coronary artery causing crushing chest pain, arm pain, sweating, and breathlessness.",
+          "remedies": ["Call emergency services IMMEDIATELY", "Chew aspirin (if not allergic)", "Stay calm and still"],
+          "medicines": ["Aspirin 325mg (if available)", "Emergency medical attention required"],
+          "see_doctor": true
+        },
+        {
+          "name": "Anxiety/Panic Attack",
+          "severity": "medium",
+          "description": "Intense anxiety causing chest tightness, rapid heartbeat, and shortness of breath.",
+          "remedies": ["Deep slow breathing (4-7-8 technique)", "Sit down in a calm place", "Focus on grounding (5-4-3-2-1)"],
+          "medicines": ["Clonazepam (prescription)", "Consult doctor for ongoing management"],
+          "see_doctor": false
+        }
+      ]
+    },
+    "fatigue": {
+      "conditions": [
+        {
+          "name": "Anemia",
+          "severity": "medium",
+          "description": "Low red blood cell count causing extreme tiredness, pale skin, and weakness.",
+          "remedies": ["Eat iron-rich foods (spinach, lentils, meat)", "Vitamin C to boost iron absorption", "Rest"],
+          "medicines": ["Iron supplements (Ferrous sulphate)", "Folic acid", "Vitamin B12 — consult doctor"],
+          "see_doctor": true
+        },
+        {
+          "name": "Hypothyroidism",
+          "severity": "medium",
+          "description": "Underactive thyroid causing fatigue, weight gain, cold intolerance, and depression.",
+          "remedies": ["Balanced diet", "Regular light exercise", "Adequate sleep"],
+          "medicines": ["Levothyroxine (prescription only)", "Regular thyroid monitoring"],
+          "see_doctor": true
+        },
+        {
+          "name": "Sleep Deprivation",
+          "severity": "low",
+          "description": "Insufficient sleep leading to tiredness, poor concentration, and irritability.",
+          "remedies": ["Sleep 7-9 hours", "Maintain consistent sleep schedule", "Avoid screens before bed", "Avoid caffeine at night"],
+          "medicines": ["Melatonin (mild)", "Consult doctor if insomnia persists"],
+          "see_doctor": false
+        }
+      ]
+    },
+    "nausea": {
+      "conditions": [
+        {
+          "name": "Motion Sickness",
+          "severity": "low",
+          "description": "Dizziness and nausea caused by travel (car, ship, plane).",
+          "remedies": ["Sit facing forward", "Fresh air", "Ginger tea or candy", "Focus on horizon"],
+          "medicines": ["Dimenhydrinate (Dramamine)", "Meclizine", "Domperidone"],
+          "see_doctor": false
+        },
+        {
+          "name": "Gastroenteritis",
+          "severity": "medium",
+          "description": "Stomach flu causing nausea, vomiting, diarrhea, and stomach cramps.",
+          "remedies": ["ORS for hydration", "Rest", "BRAT diet", "Avoid solid food until vomiting stops"],
+          "medicines": ["Ondansetron (anti-nausea)", "ORS sachets", "Probiotics"],
+          "see_doctor": false
+        }
+      ]
+    },
+    "rash": {
+      "conditions": [
+        {
+          "name": "Allergic Reaction",
+          "severity": "medium",
+          "description": "Skin rash caused by allergic response to food, medicine, or environment.",
+          "remedies": ["Avoid allergen", "Cool compress on rash", "Oatmeal bath", "Wear loose clothing"],
+          "medicines": ["Cetirizine or Loratadine (antihistamine)", "Hydrocortisone cream (topical)", "See doctor if severe"],
+          "see_doctor": false
+        },
+        {
+          "name": "Chickenpox",
+          "severity": "medium",
+          "description": "Viral infection causing itchy blisters all over the body with fever.",
+          "remedies": ["Don't scratch blisters", "Calamine lotion", "Oatmeal bath", "Rest and isolate"],
+          "medicines": ["Calamine lotion", "Cetirizine for itching", "Paracetamol for fever", "Acyclovir (if prescribed)"],
+          "see_doctor": true
+        }
+      ]
+    }
+  },
+  "common_symptoms_list": [
+    "Fever", "Headache", "Cough", "Sore Throat", "Runny Nose",
+    "Body Aches", "Fatigue", "Nausea", "Vomiting", "Diarrhea",
+    "Stomach Pain", "Chest Pain", "Dizziness", "Shortness of Breath",
+    "Rash", "Itching", "Loss of Appetite", "Weight Loss", "Back Pain",
+    "Joint Pain", "Eye Redness", "Ear Pain", "Toothache", "Swollen Lymph Nodes",
+    "Night Sweats", "Chills", "Loss of Smell", "Loss of Taste", "Skin Yellowing",
+    "Dark Urine", "Frequent Urination", "Difficulty Swallowing", "Muscle Weakness",
+    "Numbness", "Blurred Vision", "Anxiety", "Depression", "Insomnia",
+    "Palpitations", "Swollen Feet", "Hair Loss", "Dry Skin", "Mouth Ulcers"
+  ]
+}

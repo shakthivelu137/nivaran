@@ -1,0 +1,136 @@
+.results-page {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.emergency-alert {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* AI Summary */
+.ai-summary-card {
+  background: linear-gradient(135deg, #e3f2fd, #e8f5e9);
+  border: 1px solid #90caf9;
+  margin-bottom: 2rem;
+}
+
+.ai-badge {
+  display: inline-block;
+  background: var(--secondary);
+  color: white;
+  padding: 0.25rem 0.85rem;
+  border-radius: 99px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.ai-summary-card p {
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+.general-advice {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.6);
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* Conditions */
+.conditions-section {
+  margin-bottom: 2rem;
+}
+
+.section-heading {
+  font-size: 1.3rem;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+.condition-card {
+  background: white;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border);
+}
+
+.condition-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.condition-header h3 {
+  font-size: 1.2rem;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.condition-desc {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.condition-sections {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.cond-section h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.cond-section ul {
+  padding-left: 1.25rem;
+}
+
+.cond-section ul li {
+  font-size: 0.9rem;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.see-doctor-alert {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  font-size: 0.92rem;
+  margin-top: 0.5rem;
+}
+
+/* Actions */
+.results-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .condition-sections {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
