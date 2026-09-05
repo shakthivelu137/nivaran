@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Nivaran</string>
+    <string name="title_activity_main">Nivaran</string>
+    <string name="package_name">com.nivaran.healthapp</string>
+    <string name="custom_url_scheme">com.nivaran.healthapp</string>
+</resources>
