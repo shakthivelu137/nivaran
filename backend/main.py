@@ -24,16 +24,8 @@ app = FastAPI(
 # Allow frontend to connect
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://localhost:3000",
-        "https://nivaran-api-fd0s.onrender.com",
-        "https://nivaran.vercel.app",
-        "capacitor://localhost",
-        "http://localhost",
-        "*",  # Allow all for Android app
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
