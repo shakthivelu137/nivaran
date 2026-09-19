@@ -1,28 +1,33 @@
 import React from "react";
 import { useLocation, useNavigate, Link } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
 import "./Results.css";
 
-const severityLabel = { low: "🟢 Low", medium: "🟡 Medium", high: "🔴 High" };
-
-function ConditionCard({ condition }) {
+function ConditionCard({ condition, t }) {
   const sev = condition.severity || "low";
+  const severityBadgeLabel = {
+    low: t("severityLow"),
+    medium: t("severityMed"),
+    high: t("severityHigh"),
+  };
+
   return (
     <div className={`condition-card severity-${sev}`}>
       <div className="condition-header">
         <h3>{condition.name}</h3>
-        <span className={`badge badge-${sev}`}>{severityLabel[sev]}</span>
+        <span className={`badge badge-${sev}`}>{severityBadgeLabel[sev] || sev}</span>
       </div>
       <p className="condition-desc">{condition.description}</p>
 
       <div className="condition-sections">
         <div className="cond-section">
-          <h4>🌿 Home Remedies</h4>
+          <h4>{t("homeRemedies")}</h4>
           <ul>
             {condition.remedies?.map((r, i) => <li key={i}>{r}</li>)}
           </ul>
         </div>
         <div className="cond-section">
-          <h4>💊 Medicines</h4>
+          <h4>{t("medicines")}</h4>
           <ul>
             {condition.medicines?.map((m, i) => <li key={i}>{m}</li>)}
           </ul>
@@ -31,7 +36,7 @@ function ConditionCard({ condition }) {
 
       {condition.see_doctor && (
         <div className="see-doctor-alert">
-          🚨 <strong>See a Doctor:</strong> This condition requires professional medical evaluation.
+          🚨 <strong>{t("seeDoctorAlert")}</strong>
         </div>
       )}
     </div>
@@ -41,6 +46,7 @@ function ConditionCard({ condition }) {
 export default function Results() {
   const location = useLocation();
   const navigate = useNavigate();
+  const { t, translateSymptom } = useLanguage();
   const result = location.state?.result;
 
   if (!result) {
@@ -50,7 +56,7 @@ export default function Results() {
         <p style={{ color: "var(--text-light)", margin: "1rem 0" }}>
           Please go back and check your symptoms first.
         </p>
-        <Link to="/check" className="btn btn-primary">← Back to Checker</Link>
+        <Link to="/check" className="btn btn-primary">{t("backToChecker")}</Link>
       </div>
     );
   }
@@ -75,26 +81,26 @@ export default function Results() {
   return (
     <div className="results-page container">
       <div className="page-header">
-        <h1>📊 Analysis Results</h1>
-        <p>Based on your symptoms: <strong>{symptoms_analyzed?.join(", ")}</strong></p>
+        <h1>📊 {t("resultsTitle")}</h1>
+        <p>{t("symptomsAnalyzed")}: <strong>{symptoms_analyzed?.map(s => translateSymptom(s)).join(", ")}</strong></p>
       </div>
 
       {/* Emergency alert */}
       {hasHigh && (
         <div className="alert alert-error emergency-alert">
           🚨 <strong>Emergency Alert:</strong> One or more conditions detected require immediate medical attention.
-          Please contact a doctor or emergency services right away.
+          Please contact a doctor or emergency services right away (Ambulance: 108).
         </div>
       )}
 
       {/* AI Summary */}
       {ai_analysis?.ai_available && ai_analysis?.ai_summary && (
         <div className="card ai-summary-card">
-          <div className="ai-badge">🧠 AI Analysis (Gemini)</div>
+          <div className="ai-badge">🧠 {t("aiSummary")} (Gemini)</div>
           <p>{ai_analysis.ai_summary}</p>
           {ai_analysis.general_advice && (
             <div className="general-advice">
-              💡 <strong>General Advice:</strong> {ai_analysis.general_advice}
+              💡 <strong>{t("generalAdvice")}:</strong> {ai_analysis.general_advice}
             </div>
           )}
         </div>
@@ -102,13 +108,13 @@ export default function Results() {
 
       {/* Conditions */}
       <div className="conditions-section">
-        <h2 className="section-heading">Possible Conditions ({uniqueConditions.length})</h2>
+        <h2 className="section-heading">{t("possibleConditions")} ({uniqueConditions.length})</h2>
         {uniqueConditions.length === 0 ? (
           <div className="card" style={{ textAlign: "center", color: "var(--text-light)" }}>
             No specific conditions matched. Please consult a doctor for personalized advice.
           </div>
         ) : (
-          uniqueConditions.map((c, i) => <ConditionCard key={i} condition={c} />)
+          uniqueConditions.map((c, i) => <ConditionCard key={i} condition={c} t={t} />)
         )}
       </div>
 
@@ -118,10 +124,10 @@ export default function Results() {
       {/* Actions */}
       <div className="results-actions">
         <button onClick={() => navigate("/check")} className="btn btn-outline">
-          ← Check Again
+          {t("backToChecker")}
         </button>
         <Link to="/history" className="btn btn-secondary">
-          📅 View History
+          📅 {t("viewHistory")}
         </Link>
       </div>
     </div>

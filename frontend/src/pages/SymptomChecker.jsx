@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getCommonSymptoms, analyzeSymptoms } from "../services/api";
+import { useLanguage } from "../context/LanguageContext";
 import "./SymptomChecker.css";
 
 export default function SymptomChecker() {
@@ -9,6 +10,7 @@ export default function SymptomChecker() {
   const [customInput, setCustomInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const { t, translateSymptom } = useLanguage();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -55,18 +57,18 @@ export default function SymptomChecker() {
   return (
     <div className="checker-page container">
       <div className="page-header">
-        <h1>🔍 Symptom Checker</h1>
-        <p>Select your symptoms below or type them in. We'll analyze and give you health guidance.</p>
+        <h1>{t("symptomCheckerTitle")}</h1>
+        <p>{t("symptomCheckerSub")}</p>
       </div>
 
       {/* Selected symptoms tags */}
       {selectedSymptoms.length > 0 && (
         <div className="card selected-section">
-          <h3>✅ Selected Symptoms ({selectedSymptoms.length})</h3>
+          <h3>✅ {t("selectedSymptoms")} ({selectedSymptoms.length})</h3>
           <div className="symptom-tags">
             {selectedSymptoms.map((s) => (
               <span key={s} className="symptom-tag selected">
-                {s}
+                {translateSymptom(s)}
                 <button onClick={() => removeSymptom(s)} className="tag-remove">✕</button>
               </span>
             ))}
@@ -75,51 +77,61 @@ export default function SymptomChecker() {
       )}
 
       {/* Custom input */}
-      <div className="card">
-        <h3>✏️ Type a Symptom</h3>
+      <div className="card custom-input-section">
+        <h3>✏️ {t("typeSymptom")}</h3>
         <div className="custom-input-row">
           <input
             type="text"
-            placeholder="e.g. burning eyes, stiff neck..."
+            placeholder={t("typePlaceholder")}
             value={customInput}
             onChange={(e) => setCustomInput(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && addCustom()}
           />
-          <button className="btn btn-primary" onClick={addCustom}>Add</button>
+          <button onClick={addCustom} className="btn btn-primary">
+            {t("add")}
+          </button>
         </div>
       </div>
 
-      {/* Common symptoms selector */}
-      <div className="card">
-        <h3>📋 Common Symptoms — Click to Select</h3>
+      {/* Common symptoms list */}
+      <div className="card common-section">
+        <h3>📋 {t("commonSymptoms")}</h3>
         <div className="symptom-chips">
-          {commonSymptoms.map((s) => (
-            <button
-              key={s}
-              onClick={() => toggleSymptom(s)}
-              className={`symptom-chip ${selectedSymptoms.includes(s) ? "chip-selected" : ""}`}
-            >
-              {selectedSymptoms.includes(s) ? "✓ " : ""}{s}
-            </button>
-          ))}
+          {commonSymptoms.map((symptom) => {
+            const isSelected = selectedSymptoms.includes(symptom);
+            return (
+              <button
+                key={symptom}
+                onClick={() => toggleSymptom(symptom)}
+                className={`chip ${isSelected ? "active" : ""}`}
+              >
+                {isSelected ? "✓ " : "+ "}
+                {translateSymptom(symptom)}
+              </button>
+            );
+          })}
         </div>
       </div>
 
-      {/* Analyze button */}
+      {/* Error alert */}
       {error && <div className="alert alert-error">{error}</div>}
-      <div className="analyze-btn-row">
+
+      {/* Submit button */}
+      <div className="action-row">
         <button
-          className="btn btn-primary btn-lg analyze-btn"
           onClick={handleSubmit}
-          disabled={loading}
+          className="btn btn-primary btn-lg analyze-btn"
+          disabled={loading || selectedSymptoms.length === 0}
         >
-          {loading ? "🔄 Analyzing..." : "🧠 Analyze Symptoms →"}
+          {loading ? t("analyzingBtn") : t("analyzeBtn")}
         </button>
       </div>
 
-      <div className="disclaimer">
-        ⚠️ This tool is for informational purposes only. It does not replace professional medical advice.
-        Always consult a qualified healthcare provider for any health concerns.
+      {/* Disclaimer */}
+      <div className="disclaimer-box">
+        <p>
+          ⚠️ {t("disclaimerNotice")}
+        </p>
       </div>
     </div>
   );
