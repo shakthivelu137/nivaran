@@ -37,9 +37,9 @@ export default function Navbar() {
               className="lang-select"
               title="Select Language"
             >
-              <option value="en">English (EN)</option>
-              <option value="ta">தமிழ் (Tamil)</option>
-              <option value="hi">हिन्दी (Hindi)</option>
+              <option value="en">EN</option>
+              <option value="ta">தமிழ்</option>
+              <option value="hi">हिन्दी</option>
             </select>
           </div>
 
